@@ -1,6 +1,7 @@
 import unittest
 from htmlnode import HTMLNode
 
+
 class TestHTMLNode(unittest.TestCase):
     def test_props_to_html(self):
         # Test basic attributes
@@ -18,6 +19,8 @@ class TestHTMLNode(unittest.TestCase):
         node = HTMLNode(tag="h1", value="Title")
         self.assertIn("tag: h1", repr(node))
         self.assertIn("value: Title", repr(node))
-
+        
 if __name__ == "__main__":
     unittest.main()
+    
+    

@@ -1,8 +1,7 @@
-from textnode import TextNode, TextType
-from leafnode import LeafNode # Need this to create the return objects
+import textnode, leafnode, parentnode, htmlnode
 
 def text_node_to_html_node(text_node):
-    match text_node.text_type:
+    match text_node.text_type:          # 'match' acts like a cleaner version of your if/elif chain
         case TextType.PLAIN:
             return LeafNode(None, text_node.text)
         case TextType.BOLD:
@@ -15,14 +14,6 @@ def text_node_to_html_node(text_node):
             return LeafNode("a", text_node.text, {"href": text_node.url})
         case TextType.IMAGE:
             return LeafNode("img", "", {"src": text_node.url, "alt": text_node.text})
-        case _:
+        case _:                         # The underscore is a 'catch-all' (like the 'else' block)
             raise ValueError(f"Invalid text type: {text_node.text_type}")
-
-def main():
-    # Test our new function directly in main
-    node = TextNode("Hello World", TextType.BOLD)
-    html_node = text_node_to_html_node(node)
-    print(html_node.to_html())
-
-if __name__ == "__main__":
-    main()
+    

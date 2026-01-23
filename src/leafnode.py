@@ -6,7 +6,7 @@ class LeafNode(HTMLNode):
         super().__init__(tag, value, None, props)  # Since a "Leaf" cannot have children, we hardcode that as None when calling super().__init__.
         
     def to_html(self):
-        if self.value is None: # Your guard clause
+        if self.value is None:                          # Your guard clause
             raise ValueError("Invalid HTML: no value")
         if self.tag is None:
             return self.value

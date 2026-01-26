@@ -23,8 +23,8 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
                 continue
             
             if i % 2 == 0:
-                new_nodes.append(text_node.TextNode(part, text_type.TEXT))
+                new_nodes.append(TextNode(part, TextType.TEXT))  # plain TextNode
             else:
-                new_nodes.append(text_node.TextNode(part, text_type))
+                new_nodes.append(TextNode(part, text_type))      # plain TextNode
                 
     return new_nodes

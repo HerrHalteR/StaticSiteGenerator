@@ -5,8 +5,8 @@ from textnode import TextNode, TextType
 
 class TestTextToHTML(unittest.TestCase):
     def test_text(self):
-        # Testing PLAIN text (matches your TextType.PLAIN)
-        node = TextNode("This is a text node", TextType.PLAIN)
+        # Testing TEXT text (matches your TextType.TEXT)
+        node = TextNode("This is a text node", TextType.TEXT)
         html_node = text_node_to_html_node(node)
         self.assertEqual(html_node.tag, None)
         self.assertEqual(html_node.value, "This is a text node")

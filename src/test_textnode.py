@@ -11,7 +11,7 @@ class TestTextNode(unittest.TestCase):
         
     def test_not_eq_different_text_types(self):
         node3 = TextNode("This is a text node", TextType.BOLD)
-        node4 = TextNode("This is a text node", TextType.PLAIN)
+        node4 = TextNode("This is a text node", TextType.TEXT)
         self.assertNotEqual(node3, node4)
         
     def test_eq_same_link_with_url(self):

@@ -1,7 +1,9 @@
-import textnode, leafnode, parentnode, htmlnode
+from textnode import TextType  # and TextNode if you ever need it
+from leafnode import LeafNode
+
 
 def text_node_to_html_node(text_node):
-    match text_node.text_type:          # 'match' acts like a cleaner version of your if/elif chain
+    match text_node.text_type:
         case TextType.TEXT:
             return LeafNode(None, text_node.text)
         case TextType.BOLD:
@@ -14,6 +16,5 @@ def text_node_to_html_node(text_node):
             return LeafNode("a", text_node.text, {"href": text_node.url})
         case TextType.IMAGE:
             return LeafNode("img", "", {"src": text_node.url, "alt": text_node.text})
-        case _:                         # The underscore is a 'catch-all' (like the 'else' block)
+        case _:
             raise ValueError(f"Invalid text type: {text_node.text_type}")
-    

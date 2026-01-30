@@ -1,6 +1,7 @@
-import unittest
 import os
 import tempfile
+import unittest
+
 from pages import extract_title, generate_page
 
 
@@ -40,12 +41,6 @@ no title here
         with self.assertRaises(Exception):
             extract_title(md)
 
-# add to src/test_pages.py
-import os
-import tempfile
-import unittest
-
-from pages import extract_title, generate_page
 
 class TestGeneratePage(unittest.TestCase):
     def test_generate_page_basic(self):

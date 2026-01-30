@@ -2,6 +2,7 @@ from enum import Enum
 from htmlnode import HTMLNode
 from inline_markdown import text_to_textnodes
 from textnode import TextNode, TextType
+from main import text_node_to_html_node
 
 
 class BlockType(Enum):

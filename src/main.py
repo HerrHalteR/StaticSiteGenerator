@@ -27,16 +27,6 @@ def text_node_to_html_node(text_node):
             raise ValueError(f"Invalid text type: {text_node.text_type}")
 
 
-def markdown_to_html_node(markdown):
-    root = HTMLNode(tag="div", children=[])
-    blocks = markdown_to_blocks(markdown)
-    for block in blocks:
-        block_type = block_to_block_type(block)
-        block_node = block_to_html_node(block, block_type)
-        root.children.append(block_node)
-    return root
-
-
 def block_to_html_node(block, block_type):
     if block_type == BlockType.PARAGRAPH:
         p_node = HTMLNode(tag="p", children=[])
